@@ -1,0 +1,1095 @@
+﻿* {
+margin: 0em;
+padding: 0em;
+font-size: 100%;
+border-style: none;
+list-style-type: none;
+}
+
+  /* 1. 給 header 加上背景色，與導覽列或頁面主色一致 */
+  header {
+      background-color:maroon; /* 這裡改用你導覽列那個深綠色 */
+      width: 100%;
+      padding: 10px 0; /* 增加一點點上下留白 */
+      border-top-left-radius: 12px; /* 配合你 wrapper 的圓角 */
+      border-top-right-radius: 12px;
+      margin-top: 60px; /* 給導覽列留出位置，這樣嘉年華 Banner 就不會被切掉 */
+
+
+
+  }
+
+  /* 2. 你的 Banner 設定維持 800px */
+  header img {
+      width: 100% !important;
+      max-width: 800px !important;
+      height: auto !important;
+      display: block;
+      margin: 0 auto; /* 置中 */
+      border-radius: 8px;
+  }
+
+  body {
+    background-color:lightskyblue;
+    font-family: "trebutchet ms",calibri,arial, sans-serif;
+      }
+
+      #e, #c, #d, #wrapper {
+      color: #def8fe;
+      /* 關鍵：在大螢幕最高 1024px，在小螢幕會自動縮小到 100% */
+      max-width: 1024px; 
+      width: 100%;
+      margin: 0px auto 20px auto;
+      box-sizing: border-box;
+  }
+
+
+
+#inner-wrapper {
+    
+background-color: lightskyblue;
+    padding: 10px;
+    /* 關鍵：在大螢幕是 1024px，在小螢幕會自動變為 100% 寬度 */
+    max-width: 100%; 
+    box-sizing: border-box; /* 確保 padding 不會把容器撐破 */
+
+
+}
+
+
+/* 容器：設為相對定位 (Relative)，作為文字的基準點 */
+.hero-container {
+    position: relative;
+    max-width: 1006px; /* 對齊你圖片的最大寬度 */
+    margin: 20px auto;
+    display: block;
+    overflow: hidden; /* 確保縮放時不會超出邊界 */
+    border-radius: 15px; /* 配合圖片的圓角 */
+}
+/* 文字：設為絕對定位 (Absolute)，壓在圖片中心 */
+.hero-overlay-text {
+    /* --- 1. 昨天的定位與功能 (保留) --- */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+    white-space: nowrap;
+
+    /* --- 2. 昨天的字體樣式 (保留) --- */
+    color: white;
+    font-size: clamp(1.5rem, 6vw, 4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.9);
+
+
+}
+
+
+
+#hero-pic {
+
+
+     /* 核心：寬度設為 100%，它會自動填滿 #inner-wrapper 的寬度 */
+    width: 100% !important; 
+    
+    /* 限制在大螢幕的最大寬度，避免圖片拉到模糊 */
+    max-width: 1006px; 
+    
+    /* 高度設為 auto，比例才不會變形 (保持 768 的感覺) */
+    height: auto !important; 
+    
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    color:black;
+    /* 保持你喜歡的平滑動畫 */
+    transition: transform 0.5s ease;
+
+
+    
+    
+
+    
+    /* 確保圖片縮放時不會變形 (維持比例填充) */
+    object-fit: cover; 
+    
+    
+    /* 保持順滑變化 */
+    transition: filter 0.4s ease;
+}
+
+/* 懸停時微幅放大 */
+#hero-pic:hover {
+    transform: scale(1.02);
+}
+
+/* Home/Macau/Contact */
+/* Desktop Styles */
+#check { display: none; } /* Hide the actual checkbox */
+
+.checkbtn { 
+  display: flex; /* Hide burger icon on desktop */
+  cursor: pointer;
+}
+
+.nav-links {  
+  display: flex;
+justify-content: space-around;
+  list-style: none;
+  background-color:darkcyan;
+}
+
+ nav-links a:hover {  
+  background-color:gray;
+
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;      /* 桌面版用小一點的字 */
+    padding: 10px 12px;   /* 桌面版左右間距小一點 */
+    display: block;
+    transition: 0.3s;
+}
+
+
+
+
+
+/* --- 2. 導覽列與連結樣式 --- */
+.navbar {
+    box-sizing: border-box;
+    padding: 0 20px;
+    background: #333;
+    position: absolute;
+    height: 60px;
+    z-index: 9999 !important;                      /* 5. 新增：壓在圖片上方 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1024px !important;
+    height: 60px;
+margin: 0,auto;
+
+left:50%;
+max-width: 98% !important;
+background-color:purple!important; 
+    transform: translateX(-50%); /* ✨ 這是置中神技，讓它精確對齊畫面中心 */
+    transition: all 0.4s ease; /* 變化的靈魂：縮放與變色都要順滑 *
+
+
+
+    
+  }
+
+#nav-links {  
+
+background-color: transparent !important; 
+    
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+
+  }
+
+#nav-links li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    display: inline-block;
+    transition: transform 0.3s ease; /* 保持平滑位移效果 */
+}
+
+/* 連結 Hover 跳動效果：向右上方跳動 */
+#nav-links li a:hover, .moving-link:hover {
+    transform: translate(5px, -5px);
+    color: yellow;
+}
+
+.navbar.scrolled {
+  height: 50px;          /* 變窄一點，省空間 */
+    background-color: rebeccapurple !important; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+
+
+  }
+
+ 
+/* --- 3. 漢堡圖示樣式 (桌機版預設隱藏) --- */
+.burger-menu {
+    display: none; 
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* 確保那三條線在手機版能被看見 */
+.burger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white; /* 配合文字顏色 */
+    margin: 5px auto;
+    transition: all 0.3s ease;
+}
+
+/* --- 4. 圖片響應式處理 (包含 Header 與主圖) --- */
+
+/* 頂部 Banner (firefly.png) */
+/* header img { */
+    width: 100% !important; 
+    max-width: 1024px;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+    border-radius:15px;
+}
+
+/* 主視覺風景圖 (#hero-pic) */
+#hero-pic {
+    width: 100% !important;
+    max-width: 1006px;
+    height: auto !important; /* 保持 768 的完美比例 */
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.5s ease; /* 縮放動畫 */
+}
+
+/* 圖片懸停時微微放大 2% */
+#hero-pic:hover {
+    transform: scale(1.02);
+}
+
+/* --- 5. 手機版響應式媒體查詢 (當螢幕小於 768px) --- */
+@media screen and (max-width: 768px) {
+    .burger-menu {
+        display: block; /* 手機版顯示漢堡 */
+    }
+
+    #nav-links {
+        display: none;      /* 預設隱藏，靠 JS 切換 active */
+        position: absolute; /* 懸浮在圖片上方 */
+        left: 0;
+        top: 60px;
+        width: 100%;
+        flex-direction: column;
+        z-index: 1000;      /* 確保壓在 #hero-pic 上面 */
+        text-align: center;
+        padding: 0;
+
+background-color: #1b5e20 !important; /* 深色背景配合手機導覽 */
+box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      }
+
+      
+
+    /* 當 JS 加入 .active 時顯示選單 */
+    #nav-links.active {
+        display: flex !important;
+        
+    }
+
+    #nav-links li {
+        width:100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    #nav-links li a {
+        
+        font-size: 18px;    /* 手機版字體加大，方便手指點擊 */
+        padding: 20px 0;    /* 增加上下高度，讓每個選項看起來一樣大 */
+        width: 100%;        /* 讓整個寬度都可以點 */
+    }
+
+
+
+    
+    /* 強制所有容器在手機版不要死守 1024px */
+    #c, #d, #e, #wrapper {
+        width: 100% !important;
+    }
+}
+
+
+/* 漢堡轉動動畫 */
+.burger-menu.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.burger-menu.open span:nth-child(2) { opacity: 0; }
+.burger-menu.open span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+</style>
+
+
+
+
+/* Navbar container */
+/* navbar {  */
+display:flex;
+justify-content:space-around;
+  overflow: hidden;
+  background-color: lightskyblue;
+  font-family: Arial;
+;
+
+}
+
+
+ 
+/* Links inside the navbar */
+/* .navbar a { */
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+/* Dropdown button */
+/* .dropdown .dropbtn { */
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: gold;
+}
+
+/* Dropdown content (hidden by default) */
+/* .dropdown-content { */
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: gray;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+
+  }
+
+main{display:flex;
+justify-content:space-around;
+margin:35px auto auto auto;
+} 
+
+
+#one{
+border-radius: 15px;
+width: 250px;
+background-color:#06a6c8;
+padding: 20px;
+margin-left: 10px;
+}
+
+#current-page{color:blue;}
+
+#one h1{color:blue;
+padding-top:8px;  
+padding-left:20px; 
+padding-bottom:0px;
+margin-right: 10px;
+margin-top: 5px;
+}
+
+#one cd{
+  margin-top: 10px;
+}
+
+#two{
+border-radius: 15px;
+background-color: lightgreen;
+margin-top:1px;
+margin-left:10px;
+margin-right: 10px;
+width: 680px;
+padding-top:10px;  
+padding-left:20px; 
+padding-bottom:20px;
+
+}
+
+
+#two h2{
+  color:white;
+padding-bottom: 5px;
+
+}
+
+#two figure img{margin-top:25px;}
+
+#two p{color:black;
+height: auto;
+}
+
+
+h1{color: blue;
+
+padding-top: 20px;
+}
+
+h2{color: black;
+padding-top: 20px;
+
+}
+
+h3{color: black;}
+
+#cd{color: #fff;}
+
+#pj{
+color: #fff;	
+}
+
+
+p{
+	margin-top: 8px;
+	color: black;
+	font-size: 14px;
+}
+
+
+footer{
+background-color:purple;  
+border-radius:5px;
+margin:20px auto 0px auto;
+width: 375px;
+padding: 5px 0px 8px 0px;
+font-size: 14px;
+color:lightcoral;
+   }
+
+footer ul{
+	color:white;
+	display:flex;
+    justify-content:space-evenly; 
+	}
+
+
+footer a:link{
+	text-decoration:none;
+	color:#3b5998; 
+	}
+footer a:hover{
+background-color:wheat;  
+}
+
+footer a:visited{
+color:white;
+}
+
+
+/*book*/
+.moving-link {
+  display: inline-block; 
+  transition: transform 0.3s ease; 
+margin:20px auto 0px auto;
+width: 450px;
+padding: 5px 0px 8px 0px;
+
+  width:auto;
+height:auto;
+}
+
+.moving-link:hover {
+  transform: translate(10px, -10px); 
+  
+  /* 加上這個，會讓顏色跟位置變化的過程非常順滑 */
+  transition: all 0.3s ease-out; 
+  
+  color: #ffeb3b; 
+
+}
+
+.moving-link2 {
+  display: inline-block; 
+  transition: transform 0.3s ease; 
+width:auto;
+height:auto;
+}
+
+.moving-link2:hover {
+  transform: translate(10px, -10px); 
+  
+  /* 加上這個，會讓顏色跟位置變化的過程非常順滑 */
+  transition: all 0.3s ease-out; 
+  
+  color: #ffeb3b; 
+}
+
+.moving-link3 {
+  display: inline-block; 
+  transition: transform 0.3s ease; 
+width:auto;
+height:auto;
+}
+
+.moving-link3:hover {
+  transform: translate(10px, -10px); 
+  
+  /* 加上這個，會讓顏色跟位置變化的過程非常順滑 */
+  transition: all 0.3s ease-out; 
+  
+  color: #ffeb3b; 
+}
+
+
+/* index.html */
+
+
+
+
+
+
+
+#c{
+	color: #000;
+	width: 1024px;
+	margin: 0px auto 20px auto;
+}
+
+#d{
+	background-color:white;
+}
+#e{#sh1 {
+    /* 1. 即使文字隱藏，也要讓觸控板感應到點擊 */
+    pointer-events: auto !important;
+    
+    /* 2. 把點擊區域撐大：讓整行高度都變成感應區 */
+    display: block;
+    width: 100%;
+    padding: 20px 0; /* 增加上下間距，讓長輩或你的觸控板更容易點到 */
+    
+    /* 3. 防止點太快變成選取文字（藍藍的一片） */
+    user-select: none;
+    
+    cursor: pointer;
+}
+
+	background-color: mediumseagreen;
+	font-family: "trebutchet ms",calibri,arial, sans-serif;
+	 	 }
+
+#f{ 
+margin-top:5px;
+color:#fff;
+background-color: teal;
+display:block;
+padding: 10px;
+border-radius: 15px;
+}
+
+#g{
+	font-size: 17px;
+	color: red;
+	margin-top: 14px;
+border-radius: 15px;
+}
+
+#h{
+   margin-top: 16px;
+   font-size: 17px;
+   color: #433163;
+   }
+
+#i{
+   margin-top: 16px;
+   font-size: 17px;
+   color: #433163;
+}
+
+#i1 {
+  width: auto;
+}
+
+#j{
+	margin: 30px auto 0px auto;
+	width: 450px;
+    padding: 10px 0px 8px 0px;
+    font-size: 14px;
+    color:#433163 ;
+}
+
+#k{
+	color:white;
+	display:flex;
+    justify-content:space-around; 
+
+	}
+
+#ft {
+  background-color:#ddd;
+}
+
+
+<!-- ab.html Brazil--------->
+
+
+#main h1{
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+/* Navbar container */
+.navbar3{
+display:flex;
+justify-content:space-between;
+  overflow: hidden;
+  background-color: lightseagreen;
+  font-family: Arial;
+}
+.moving-link4 {
+  display: inline-block; 
+  transition: transform 0.3s ease; 
+margin:20px auto 0px auto;
+width: 450px;
+padding: 5px 0px 8px 0px;
+
+  width:auto;
+height:auto;
+}
+
+.moving-link4:hover {
+  transform: translate(10px, -10px); 
+  
+  /* 加上這個，會讓顏色跟位置變化的過程非常順滑 */
+  transition: all 0.3s ease-out; 
+  
+  color: #ffeb3b; 
+
+}
+.moving-link4 img{
+  height: 75px;
+  max-width: 170px;
+}
+
+.moving-link5 {
+  display: inline-block; 
+  transition: transform 0.3s ease; 
+width:auto;
+height:auto;
+}
+
+.moving-link5:hover {
+  transform: translate(10px, -10px); 
+  
+  /* 加上這個，會讓顏色跟位置變化的過程非常順滑 */
+  transition: all 0.3s ease-out; 
+  
+  color: #ffeb3b; 
+}
+
+.moving-link5 img{
+  height: 75px;
+  width: auto !important;
+  max-width: 170px;
+}
+
+.moving-link6 {
+  display: inline-block; 
+  transition: transform 0.3s ease; 
+width:auto;
+height:auto;
+}
+
+.moving-link6:hover {
+   transform: translate(10px, -10px); 
+  
+  /* 加上這個，會讓顏色跟位置變化的過程非常順滑 */
+  transition: all 0.3s ease-out; 
+  
+  color: #ffeb3b; 
+
+}
+
+.moving-link6 img{
+  height: 75px;
+  
+  max-width: 170px;
+}
+
+
+
+
+
+
+
+/* Links inside the navbar */
+.navbar3 a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar3 a:hover, .dropdown:hover .dropbtn {
+  background-color: #9b8787;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: gray;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+
+  }
+
+#m{
+  
+  margin-top: 35px;
+border-radius: 15px;
+background-color: #459b64;
+width: 400px;
+padding: 5px;
+}
+
+#vv{
+  margin-top: 35px;
+border-radius: 15px;
+background-color: cornflowerblue ;
+width: 570px;
+padding: 5px;
+}
+
+
+
+<!-- awards.html England>
+
+#vv{
+margin-left:5px;
+border-radius:8px;
+width:770px;
+background-color:silver;
+padding-top:20px;  
+padding-left:20px; 
+padding-bottom:20px;
+
+}
+
+#b{
+  margin-left:5px;
+border-radius:8px;
+width: 675px;
+background-color:palevioletred;
+padding-top:20px;  
+padding-left:20px; 
+padding-bottom:20px;
+
+}
+
+#hotel ul{
+  display: flex;
+justify-content: space-around;
+}
+
+<!-- contact.html
+
+#Cp {
+  background-color: white;
+}
+
+
+#F1 {
+  width: 100%;       /* 圖片寬度自動填滿父層 */
+    max-width: 800px;  /* 依照你之前的需求限制最大尺寸 */
+    height: auto;      /* 保持比例，不會變扁 */
+    display: block;
+    margin: 0 auto;
+   
+
+}
+
+#contact-form{
+	color:lightcyan;
+	font-weight: bold;
+	margin-top:10px;
+	  }
+
+label{
+  width:80px;
+float:left;
+  }
+
+
+textarea{
+
+margin-left: 10px;
+    width: 90%;        /* 改用百分比！原本 max-width 230px 太小，在某些手機上會歪掉 */
+    max-width: 500px;  /* 給它一個合理的上限 */
+
+
+}
+
+#contact-form fieldset {width:40%;}	
+#contact-form li {margin:10px; list-style: none;
+padding:10px; 
+color:black;
+}
+#contact-form input  {margin-left:10px; text-align: left;
+padding:5px;
+}
+#n {
+	color: #def8fe;
+	width: 95%;
+  max-width: 1024px;
+	margin: 0px auto 20px auto;
+}
+
+
+
+#z p{
+	background-color: #def8fe;
+color:#000;
+	font-family: "trebutchet ms",calibri,arial, sans-serif;
+	 	 }
+
+#q{
+margin-top:23px;
+background-color: #459b64;
+border-radius:15px;
+width: 581px;
+
+}
+
+#q h1{
+  margin-left: 10px;
+}
+
+#r{color: white;
+margin-left: 10px;
+padding: 10px;
+}
+
+#s{color: white;
+margin-left: 10px;
+padding: 10px;
+
+}
+
+
+#t{color: white;
+margin-left: 10px;
+padding: 10px;
+
+}
+		
+		
+#v{
+	border-radius:15px;
+background-color:lightseagreen;
+	margin-top:25px;
+  width: 415px;
+  max-width:500px;
+  height: auto !important;
+  margin-left: auto;
+  margin-right: auto;
+	}
+
+#v h1{
+  margin-left: 10px;
+  margin-top: 8px;
+
+}
+
+
+#w{
+	margin-top:60px;
+	margin-left:auto;
+	margin-right:auto;
+	width: 450px;
+        font-size: 14px;
+    color:#433163 ;
+	  }
+
+#w ul{
+	color:gray;
+	display:flex;
+    justify-content:space-around; 
+
+	}
+
+
+#w a:link{
+	text-decoration:none;
+	color:gray;
+	
+	}
+#w a:hover{ 
+background-color: #ddd;}
+
+#w a:visited{
+color:white;}
+
+#map1 {
+
+
+
+  width: 100%;       /* 改成 100%！原本是 570px，這會讓手機版出現橫向捲軸 */
+    max-width: 570px;  /* 保持桌機版時的大小 */
+    height: 400px;
+}
+
+#F2 {
+  width: auto;
+}
+
+#T {
+  margin-left:10px;
+}
+
+
+
+<!--projects.html(Spain)
+#one{
+  border-radius:15px;
+background-color:#d6db9a;
+  margin-top:25px; 
+}
+
+
+
+/* Navbar2 container */
+.navbar2 {
+display:flex;
+justify-content:space-between;
+  overflow: hidden;
+  background-color: #459b64;
+  font-family: Arial;
+
+
+}
+
+/* Links inside the navbar */
+.navbar2 a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar2 a:hover, .dropdown:hover .dropbtn {
+  background-color: #9b8787;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: gray;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+
+  }
+  
+  
